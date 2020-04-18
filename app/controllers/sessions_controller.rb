@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    email = params[:sessions][:email].downcase
-    password = params[:sessions][:password]
+    email = params[:session][:email].downcase
+    password = params[:session][:password]
     if login(email, password)
       flash[:success] = "ログインしました"
       redirect_to @user
