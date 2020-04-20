@@ -1,0 +1,20 @@
+<ul class="list-unstyled">
+  <% records.each do |record| %>
+    <li class="media mb-3">
+      <div class="media-body">
+        <div>
+          <%= link_to record.user.name, user_path(record.user) %>
+          <span class="text-muted">
+            poseted at <%= record.created_at %>
+          </span>
+        </div>
+        <div>
+          <p>
+            <%= record.content%>
+          </p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate records %>
+</ul>
