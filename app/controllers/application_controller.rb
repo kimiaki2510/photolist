@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def counts(user)
-      @count_records = user.records.count
-    end
+    #def counts(user)
+      #@count_records = user.records.count
+    #end
 end

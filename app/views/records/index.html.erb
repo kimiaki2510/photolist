@@ -1,4 +1,5 @@
 <% if logged_in? %>
+  <%= render 'records/records', records: @records%>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
