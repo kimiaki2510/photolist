@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
+  before_action :correct_user, only: [:edit, :update]
 
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
@@ -7,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    #recieve
     #@records = @user.records.order(id: :desc).page(params[:page])
     #counts(@user)
   end
@@ -18,7 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
+      log_in @user
       flash[:success] = 'アカウントを登録しました'
       redirect_to @user
     else
@@ -28,12 +30,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    correct_user
   end
 
   def update
-
-    @user = User.find(params[:id])
+    correct_user
     if @user.update_attributes(user_params)
       flash[:success] = 'プロフィールを編集しました'
       redirect_to @user
@@ -48,8 +49,15 @@ class UsersController < ApplicationController
 
   private
 
+
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  #正しいユーザーかどうか確認
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless @user == current_user
   end
 
 end
