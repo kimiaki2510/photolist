@@ -1,6 +1,8 @@
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#00F9A9">
-    <a class="navbar-brand"><%= link_to 'Photolist', user_path %></a>
+    <a class="navbar-brand">
+      <%= link_to 'Photolist', user_path(current_user) %>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
