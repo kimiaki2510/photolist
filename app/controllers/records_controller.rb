@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
   before_action :require_user_logged_in, except: [:index]
-  before_action :correct_user, only: [:edit, :destory]
+  before_action :correct_user, only: [:destory]
 
   def index
     if logged_in?
@@ -17,7 +17,7 @@ class RecordsController < ApplicationController
   end
 
   def create
-    @record = current_user.record.build(record_params)
+    @record = current_user.records.build(record_params)
     if @record.save
       flash[:success] = 'メッセージを投稿しました'
       redirect_to root_url
@@ -25,12 +25,6 @@ class RecordsController < ApplicationController
       flash.now[:danger] = 'メッセージの投稿に失敗しました'
       render :new
     end
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def destroy

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show]
+  before_action :require_user_logged_in, only: [:index, :show, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
 
   def index
@@ -8,8 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #recieve
-    #@records = @user.records.order(id: :desc).page(params[:page])
+    @records = @user.records.order(id: :desc).page(params[:page])
     #counts(@user)
   end
 
@@ -57,7 +56,7 @@ class UsersController < ApplicationController
   #正しいユーザーかどうか確認
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless @user == current_user
+    redirect_to(root_url) unless current_user?(@user)
   end
 
 end
