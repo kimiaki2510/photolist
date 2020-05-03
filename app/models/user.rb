@@ -13,9 +13,9 @@ class User < ApplicationRecord
   #フォローしているユーザー情報を取得する機能(自分がフォローしているユーザー)
   has_many :followings, through: :relationships, source: :follow
   #自分をフォローしているユーザー
-  has_many :reverse_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
+  has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
   #フォローされているユーザーに自分の情報を取得される機能(自分をフォローしているユーザー)
-  has_many :followers, through: :reverse_of_relationship, source: :user
+  has_many :followers, through: :reverses_of_relationship, source: :user
 #ユーザー画像
   mount_uploader :image, ImageUploader
 #渡された文字列のハッシュ値を返す
@@ -40,7 +40,7 @@ class User < ApplicationRecord
   end
 
   #すでにフォローしているか
-  def followings?(other_user)
+  def following?(other_user)
     self.followings.include?(other_user)
   end
 end

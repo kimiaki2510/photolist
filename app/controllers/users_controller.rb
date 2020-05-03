@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :update, :destroy]
+  before_action :require_user_logged_in, only: [:index, :show, :update, :destroy, :followings, :followers]
   before_action :correct_user, only: [:edit, :update]
 
   def index
@@ -46,17 +46,29 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
+    counts(@user)
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page])
+    counts(@user)
+  end
+
   private
 
 
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
-  end
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
+    end
 
-  #正しいユーザーかどうか確認
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
-  end
+    #正しいユーザーかどうか確認
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
 
 end
