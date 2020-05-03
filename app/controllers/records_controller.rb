@@ -17,7 +17,7 @@ class RecordsController < ApplicationController
   end
 
   def create
-    @record = current_user.records.build(record_params)
+    @record = current_user.records.new(record_params)
     if @record.save
       flash[:success] = 'メッセージを投稿しました'
       redirect_to root_url
@@ -36,7 +36,7 @@ class RecordsController < ApplicationController
   private
 
     def record_params
-      params.require(:record).permit(:content)
+      params.require(:record).permit(:title, :photo, :content)
     end
 
     def correct_user
