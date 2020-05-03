@@ -5,14 +5,42 @@ class User < ApplicationRecord
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }
   has_secure_password
-  #recordsと結びつけ
+#recordsと結びつけ
   has_many :records
-  #ユーザー画像
+#relationshipsと結びつけ
+  #自分がフォローしているユーザー
+  has_many :relationships
+  #フォローしているユーザー情報を取得する機能(自分がフォローしているユーザー)
+  has_many :followings, through: :relationships, source: :follow
+  #自分をフォローしているユーザー
+  has_many :reverse_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
+  #フォローされているユーザーに自分の情報を取得される機能(自分をフォローしているユーザー)
+  has_many :followers, through: :reverse_of_relationship, source: :user
+#ユーザー画像
   mount_uploader :image, ImageUploader
-  #渡された文字列のハッシュ値を返す
+#渡された文字列のハッシュ値を返す
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+  end
+#フォロー
+  #自分自身でないか
+  def follow(other_user)
+    unless self == other_user
+      #findで見つける, createで保存
+      self.relationships.find_or_create_by(follow_id: other_user.id)
+    end
+  end
+
+  def unfollow(other_user)
+    relationship = self.relationships.find_by(follow_id: other_user.id)
+    #フォローがあればアンフォローになる
+    relationship.destroy if relationship
+  end
+
+  #すでにフォローしているか
+  def followings?(other_user)
+    self.followings.include?(other_user)
   end
 end

@@ -5,12 +5,12 @@
         <div class="field">
           <%= link_to record.user.name, user_path(record.user) %>
           <span class="text-muted">
-            poseted at <%= record.created_at %>
+            <%= link_to record.title, record_path(record.id) %>
           </span>
         </div>
         <div class="field">
           <p>
-            <%= record.content%>
+            <%= link_to record.photo, record_path(record.id) %>
           </p>
         </div>
       </div>
