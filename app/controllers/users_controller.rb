@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show, :update, :destroy, :followings, :followers]
   before_action :correct_user, only: [:edit, :update]
+  before_action :user_image, only: [:update]
 
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
   def update
     correct_user
     if @user.update_attributes(user_params)
+      user_image
       flash[:success] = 'プロフィールを編集しました'
       redirect_to @user
     else
@@ -83,6 +85,14 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
+    end
+
+    def user_image
+      if params[:image]
+        @user.image_name = "#{@user.id}.jpg"
+        image = params[:image]
+        File.binwrite("public/user_images/#{@user.image_name}", image.read)
+      end
     end
 
 end
