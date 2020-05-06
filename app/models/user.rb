@@ -16,6 +16,9 @@ class User < ApplicationRecord
   has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
   #フォローされているユーザーに自分の情報を取得される機能(自分をフォローしているユーザー)
   has_many :followers, through: :reverses_of_relationship, source: :user
+  has_many :fav_users, through: :likes, source: :user
+  #いいね
+  has_many :likes, dependent: :destroy
 #ユーザー画像
   mount_uploader :image, ImageUploader
 #渡された文字列のハッシュ値を返す
@@ -42,5 +45,20 @@ class User < ApplicationRecord
   #すでにフォローしているか
   def following?(other_user)
     self.followings.include?(other_user)
+  end
+
+  #投稿をいいねする
+  def fav(user)
+    likes.create(user_id: user.id)
+  end
+
+  #いいねを解除する
+  def unfav(user)
+    likes.find_by(user_id: user.id).destroy
+  end
+
+  #現在のユーザーがいいねをしたらtrueを返す
+  def like?(user)
+    fav_users.include?(user)
   end
 end
