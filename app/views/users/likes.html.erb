@@ -2,8 +2,11 @@
   <aside class="col-sm-4">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-body">
-        </h3>
+          <% if @user.image?%>
+            <%= image_tag @user.image.thumb.url, :alt => "avatar", :class => "icon" %>
+          <% else %>
+            <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon")%>
+          <% end %>
       </div>
       <div class="card-title text-center">
         <%= @user.name %>

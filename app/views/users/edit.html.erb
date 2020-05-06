@@ -6,9 +6,9 @@
     <%= form_with(model: @user, local: true)do |f|%>
       <%= render 'layouts/error_messages', model: f.object %>
       <% if @user.image?%>
-        <%= image_tag @user.image.url %>
+        <%= image_tag @user.image.thumb.url, :alt => "avatar", :class => "icon_edit" %>
       <% else %>
-        <%= image_tag("/assets/images/default.png")%>
+        <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_edit")%>
       <% end %>
       <%= f.file_field :image %>
       <div class="form-group">
