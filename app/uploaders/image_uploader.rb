@@ -16,7 +16,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url(*args)
-    "default_url"
+    "default.jpg"
   #   # For Rails 3.1+ asset pipeline compatibility:
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   #
@@ -30,14 +30,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
   #画像の上限を200px
-  process :resize_to_limit => [200,200]
+  process :resize_to_limit => [100,100]
   #保存形式をJPGにする
   process :convert => 'jpg'
 
   # Create different versions of your uploaded files:
   #サムネイルを生成する設定
   version :thumb do
-    process resize_to_fit: [40, 40, gravity = ::Magick::CenterGravity]
+    process resize_to_fit: [100, 100]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -51,8 +51,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   #拡張子が同じ出ないとGIFをJPGとかにコンバート出来ないので、ファイル名を変更
-  def filename
-    super.chomp(Fille.extname(super)) + '.jpg' if original_filename.present?
+  #def filename
+    #super.chomp(Fille.extname(super)) + '.jpg' if original_filename.present?
   #   "something.jpg" if original_filename
-  end
+  #end
 end

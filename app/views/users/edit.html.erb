@@ -5,7 +5,11 @@
   <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @user, local: true)do |f|%>
       <%= render 'layouts/error_messages', model: f.object %>
-      <%= f.label :image, 'ユーザー画像' %>
+      <% if @user.image?%>
+        <%= image_tag @user.image.url %>
+      <% else %>
+        <%= image_tag("/assets/images/default.png")%>
+      <% end %>
       <%= f.file_field :image %>
       <div class="form-group">
         <%= f.label :name, '名前'%>
