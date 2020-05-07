@@ -1,0 +1,12 @@
+<ul class="list-unstyled">
+  <% records.each do |record| %>
+    <li class="media mb-3">
+      <div class="media-body">
+        <%= link_to record_path(record.id)do %>
+          <%= image_tag record.photo.thumb200.url %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate records %>
+</ul>

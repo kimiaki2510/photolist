@@ -10,7 +10,9 @@
         </div>
         <div class="field">
           <p>
-            <%= link_to record.photo, record_path(record.id) %>
+            <%= link_to record_path(record.id)do %>
+              <%= image_tag record.photo.url%>
+            <% end %>
           </p>
         </div>
       </div>
