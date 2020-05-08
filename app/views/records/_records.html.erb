@@ -1,22 +1,24 @@
-<ul class="list-unstyled">
+<div class="container">
   <% records.each do |record| %>
-    <li class="media mb-3">
-      <div class="media-body">
+    <div class="row">
+      <div class="col-md-4  img-hidden media-body">
         <div class="field">
-          <%= link_to record.user.name, user_path(record.user) %>
-          <span class="text-muted">
-            <%= link_to record.title, record_path(record.id) %>
-          </span>
+          <%= render 'users/icon' %>
         </div>
+      </div>
+      <div class="col-md-8">
+        <span class="text-muted">
+          <%= link_to record.title, record_path(record.id) %>
+        </span>
         <div class="field">
           <p>
             <%= link_to record_path(record.id)do %>
-              <%= image_tag record.photo.url%>
+              <%= image_tag record.photo.thumb200.url%>
             <% end %>
           </p>
         </div>
       </div>
-    </li>
+    </div>
   <% end %>
   <%= paginate records %>
-</ul>
+</div>

@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">
+      <% if current_user.image?%>
+        <%= image_tag current_user.image.thumb.url, :alt => "avatar", :class => "icon" %>
+      <% else %>
+        <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon")%>
+      <% end %>
+  </div>
+  <div class="card-title text-center">
+    <%= current_user.name %>
+  </div>
+</div>

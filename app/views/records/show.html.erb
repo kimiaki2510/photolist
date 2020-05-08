@@ -1,2 +1,6 @@
-<h1>Records#show</h1>
-<p>Find me in app/views/records/show.html.erb</p>
+
+
+<%= render 'users/icon' %>
+<%= @record.title %>
+<%= image_tag @record.photo.thumb400.url %>
+<%= @record.content %>
