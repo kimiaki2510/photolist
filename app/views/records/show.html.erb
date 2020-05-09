@@ -1,6 +1,16 @@
-
-
-<%= render 'users/icon' %>
-<%= @record.title %>
-<%= image_tag @record.photo.thumb400.url %>
-<%= @record.content %>
+<table>
+  <th>
+    <div class="card col-md-4">
+      <%= render 'users/icon' %>
+      <div><%= @record.title %></div>
+    </div>
+  </th>
+  <th>
+    <div class="card col-md-8">
+      <%= image_tag @record.photo.thumb400.url %>
+      <div class="card-body">
+        <p class="card-text"><%= @record.content %></p>
+      </div>
+    </div>
+  </th>
+</table>
