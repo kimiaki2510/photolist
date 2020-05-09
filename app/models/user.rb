@@ -21,6 +21,10 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 #ユーザー画像
   mount_uploader :image, ImageUploader
+  #タイムライン
+  def feed_records
+    Record.where(user_id: self.following_ids + [self.id])
+  end
 #渡された文字列のハッシュ値を返す
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
