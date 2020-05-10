@@ -60,12 +60,6 @@ class UsersController < ApplicationController
     counts(@user)
   end
 
-  def likes
-    @user = User.find(params[:id])
-    @likes = @user.likes.page(params[:page])
-    counts(@user)
-  end
-
   def search
     if params[:name].present?
       @users = User.where('name LIKE ?', "%#{params[:name]}%")
@@ -73,6 +67,15 @@ class UsersController < ApplicationController
       @users = User.none
     end
   end
+
+  def favs
+    @user = User.find(params[:id])
+    @record = @user.record.order(id: :desc).page(params[:page])
+    @favposts = @user.favposts.page(params[:page])
+    counts(@user)
+  end
+
+
 
   private
 

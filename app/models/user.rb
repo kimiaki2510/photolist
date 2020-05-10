@@ -18,7 +18,8 @@ class User < ApplicationRecord
   has_many :followers, through: :reverses_of_relationship, source: :user
   has_many :fav_users, through: :likes, source: :user
   #いいね
-  has_many :likes, dependent: :destroy
+  has_many :likes
+  has_many :favposts, through: :likes, source: :record
 #ユーザー画像
   mount_uploader :image, ImageUploader
   #タイムライン
@@ -52,17 +53,20 @@ class User < ApplicationRecord
   end
 
   #投稿をいいねする
-  def fav(user)
-    likes.create(user_id: user.id)
+  def fav(record)
+    likes.find_or_create_by(record_id: record.id)
   end
 
   #いいねを解除する
-  def unfav(user)
-    likes.find_by(user_id: user.id).destroy
+  def unfav(record)
+    like = likes.find_by(record_id: record.id)
+    like.destroy if like
   end
 
   #現在のユーザーがいいねをしたらtrueを返す
-  def like?(user)
-    fav_users.include?(user)
+  def favpost?(record)
+    self.favposts.include?(record)
   end
+
+
 end

@@ -1,0 +1,4 @@
+<%= form_with(model: current_user.favposts.build, remote: true)do |f| %>
+  <%= hidden_field_tag :record_id, @record.id %>
+  <%= f.submit 'いいね', class: 'btn btn-primary' %>
+<% end %>
