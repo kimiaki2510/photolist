@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
-      get :likes
+      get :like
     end
     collection do
       get :search
@@ -21,8 +21,9 @@ Rails.application.routes.draw do
   end
 
   resources :records
+  resources :like, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  resources :likes, only: [:create, :destroy]
+  #resources :likes, only: [:create, :destroy]
   #resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

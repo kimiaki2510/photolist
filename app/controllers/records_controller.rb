@@ -5,7 +5,12 @@ class RecordsController < ApplicationController
   def index
     if logged_in?
       @record = current_user.records.build #form with用
+<<<<<<< HEAD
       @records = current_user.feed_records.order(id: :desc).page(params[:page])  
+=======
+      @records = current_user.feed_records.order(id: :desc).page(params[:page])
+
+>>>>>>> e9de204305f40acce5356bd52dd38915ce7108f3
     end
   end
 

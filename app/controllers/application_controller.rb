@@ -17,7 +17,4 @@ class ApplicationController < ActionController::Base
       @count_likes = user.likes.count
     end
 
-    #def count(record)
-      #@count_likes = record.likes.count
-    #end
 end
