@@ -1,5 +1,5 @@
 <div id="like_form">
-  <% if current_user.favpost?(@record) %>
+  <% if @record.like_by?(current_user) %>
     <%= render 'likes/unlike' %>
   <% else %>
     <%= render 'likes/like' %>
