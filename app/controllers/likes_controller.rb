@@ -2,20 +2,21 @@ class LikesController < ApplicationController
   before_action :require_user_logged_in
 
   def create
-    @like = current_user.likes.build(record_id: params[:record_id])
-    @like.save
+    @like = current_user.likes.create(record_id: params[:record_id])
     redirect_to root_path
-    #@like = Record.find(params[:record_id])
-    #current_user.fav(record)
-    #redirect_back(fallback_location: root_path)
+    #respond_to do |format|
+      #format.html { redirect_to @record }
+      #format.js
+    #end
   end
 
   def destroy
-    @like = Like.find_by(record_id: params[:record_id], user_id: current_user.id)
+    @like = Like.find_by(id: params[:id]).destroy
     @like.destroy
     redirect_to root_path
-    #record = Record.find(params[:record_id])
-    #current_user.unfav(record)
-    #redirect_back(fallback_location: root_path)
+    #respond_to do |format|
+      #format.html { redirect_to @record }
+      #format.js
+    #end
   end
 end

@@ -1,3 +1,2 @@
-<span>
-  <%= link_to 'いいね', like_user_path(current_user)%>
-</span>
+<%= link_to 'いいね', likes_path(record_id: @record.id), method: :post, remote: true %>
+<%# <i class="far fa-heart fa-3x" style="color:red"></i> %>

@@ -18,8 +18,8 @@ class User < ApplicationRecord
   has_many :followers, through: :reverses_of_relationship, source: :user
   has_many :fav_users, through: :likes, source: :user
   #いいね
-  has_many :likes
-  has_many :liked_record, through: :likes, source: :record
+  has_many :likes, dependent: :destroy
+  #has_many :liked_record, through: :likes, source: :record
 #ユーザー画像
   mount_uploader :image, ImageUploader
   #タイムライン

@@ -1,3 +1,1 @@
-<span>
-  <%= link_to 'いいね解除', like_user_path(current_user), method: :delete%>
-</span>
+<%= link_to 'いいね解除', like_path(id: @like.id), method: :delete, remote: true%>
