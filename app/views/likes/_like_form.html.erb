@@ -1,7 +1,7 @@
 <div id="like_form">
     <% if @like.present? %>
-      <%= link_to 'いいね解除', like_path(id: @like.id), method: :delete %>
+      <%= render 'likes/unlike' %>
     <% else %>
-      <%= link_to 'いいね', likes_path(record_id: @record.id), method: :post %>
+      <%= render 'likes/like' %>
     <% end %>
 </div>
