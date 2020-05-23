@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2020_05_04_014945) do
 
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
     t.integer "record_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,18 +21,18 @@ ActiveRecord::Schema.define(version: 2020_05_04_014945) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "records", force: :cascade do |t|
+  create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "content"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
-  create_table "relationships", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
     t.integer "follow_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_014945) do
     t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
