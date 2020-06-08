@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'likes/create'
-  get 'likes/destroy'
-  get 'relationships/create'
-  get 'relationships/destroy'
   root to: 'records#index'
 
   get 'login', to: 'sessions#new'
