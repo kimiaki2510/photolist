@@ -14,11 +14,3 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-import Vue from 'vue';
-import Vuex from 'vuex';
-import VueRouter from 'vue-router';
-import store from '../store';
-import router from '../routes';
-import App from '../app';
-
-import '../assets/css/application';
