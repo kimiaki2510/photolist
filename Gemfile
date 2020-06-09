@@ -39,9 +39,6 @@ gem 'rmagick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#vue.jsの為のwebpack
-gem 'webpacker', github: 'rails/webpacker'
-
 #ページネーション
 gem 'kaminari'
 
