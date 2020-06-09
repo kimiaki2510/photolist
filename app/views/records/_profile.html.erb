@@ -7,7 +7,9 @@
             <%= link_to record_path(record.id)do %>
               <%= image_tag record.photo.thumb200.url %>
             <% end %>
-            
+            <div class="img-responsive thumbnail　aligncenter size-full wp-image-425">
+              <%= image_tag record.photo.thumb200.url %>
+            </div>
           </tr>
         <% end %>
       </table>
