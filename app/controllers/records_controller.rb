@@ -10,7 +10,8 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = current_user.records.find(params[:id])
+    #@record = current_user.records.find(params[:id])
+    @record = Record.find(params[:id])
     @like = current_user.likes.find_by(record_id: @record.id)
   end
 
