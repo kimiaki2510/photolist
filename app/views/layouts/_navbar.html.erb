@@ -39,6 +39,10 @@
               <li class="dropdown-item">
                 <%= link_to 'ユーザー', users_path %>
               </li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item">
+                <%= link_to 'アカウント削除', user_path(current_user), method: :delete %>
+              </li>
             </ul>
           </li>
         <% else %>

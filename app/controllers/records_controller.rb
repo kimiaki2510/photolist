@@ -32,7 +32,7 @@ class RecordsController < ApplicationController
   end
 
   def destroy
-    @record.destroy
+    @record = current_user.record.find(params[:id]).destroy
     flash[:success] = 'メッセージを削除しました'
     redirect_back(fallback_location: root_path)
   end
