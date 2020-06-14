@@ -1,12 +1,12 @@
 <div class="card_profile">
   <div class="card-header">
-      <% if current_user.image? %>
-        <%= image_tag current_user.image.thumb.url, :alt => "avatar", :class => "icon_profile" %>
+      <% if @user.image? %>
+        <%= image_tag @user.image.thumb.url, :alt => "avatar", :class => "icon_profile" %>
       <% else %>
         <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
       <% end %>
   </div>
   <div class="card-title text-center">
-    <%= link_to current_user.name, user_path(@record.user) %>
+    <%= link_to @user.name, user_path(@record.user) %>
   </div>
 </div>
