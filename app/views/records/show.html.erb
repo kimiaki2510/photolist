@@ -1,7 +1,18 @@
 <table>
   <th>
     <div class="card col-md-4">
-      <%= render 'users/icon' %>
+      <div class="card_profile">
+        <div class="card-header">
+            <% if @record.user.image? %>
+              <%= image_tag @record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile" %>
+            <% else %>
+              <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
+            <% end %>
+        </div>
+        <div class="card-title text-center">
+          <%= link_to @record.user.name, user_path(@record.user) %>
+        </div>
+      </div>
       <div><%= @record.title %></div>
     </div>
   </th>
