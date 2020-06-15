@@ -3,12 +3,23 @@
     <div class="row">
       <div class="col-md-4  img-hidden media-body">
         <div class="field">
-          <%= render 'users/icon' %>
+          <div class="card_profile">
+            <div class="card-header">
+                <% if record.user.image? %>
+                  <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile" %>
+                <% else %>
+                  <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
+                <% end %>
+            </div>
+            <div class="card-title text-center">
+              <%= link_to record.user.name, user_path(@record.user) %>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-8">
         <span class="text-muted">
-          <%= link_to record.title, record_path(record.id) %>          
+          <%= link_to record.title, record_path(record.id) %>
         </span>
         <div class="field">
           <p>

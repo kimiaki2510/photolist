@@ -4,16 +4,15 @@ class RecordsController < ApplicationController
 
   def index
     if logged_in?
-      @user = User.find(id: @record.user_id)
       @record = current_user.records.build #form with用
       @records = current_user.feed_records.order(id: :desc).page(params[:page])
     end
   end
 
   def show
-    @record = current_user.records.find(params[:id])
-    #@record = Record.find(params[:id])
-    @user = User.find(id: @record.user_id)
+    #@record = current_user.records.find(params[:id])
+    @record = Record.find(params[:id])
+    #@user = User.find(id: @record.user_id)
     @like = current_user.likes.find_by(record_id: @record.id)
   end
 
