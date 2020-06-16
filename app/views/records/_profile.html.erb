@@ -13,6 +13,13 @@
                 <div class="modal-content">
                   <div class="modal-body">
                     <%= image_tag record.photo.thumb200.url, alt: "baby-1151351_1920", width: "400", height: "300", class: "aligncenter size-full wp-image-425", alt: "baby-1151351_1920" %>
+                    <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile" %>
+                    <%= record.user.name %>
+                    <%= record.title %>
+                    <%= record.content %>
+                      <%= link_to record_path, method: :delete do %>
+                        <i class="fas fa-trash-alt"></i>
+                      <% end %>                    
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">閉じる</button>

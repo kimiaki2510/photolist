@@ -10,7 +10,7 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record.find(params[:id])    
+    @record = Record.find(params[:id])
     @like = current_user.likes.find_by(record_id: @record.id)
   end
 
@@ -31,7 +31,7 @@ class RecordsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy    
     @record = current_user.records.find(params[:id]).destroy
     flash[:success] = 'メッセージを削除しました'
     redirect_back(fallback_location: root_path)
