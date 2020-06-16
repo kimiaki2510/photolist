@@ -4,9 +4,6 @@
       <table class="table">
         <% records.each do |record| %>
           <tr>
-            <%= link_to record_path(record.id)do %>
-              <%= image_tag record.photo.thumb200.url %>
-            <% end %>
             <%= image_tag record.photo.thumb200.url, class: "img-responsive thumbnail　aligncenter size-full wp-image-425", data: {toggle: "modal", target: "#image_Modal"}, style: "cursor:pointer" %>
             <div class="modal fade" id="image_Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
               <div class="modal-dialog modal-lg modal-middle">
@@ -17,9 +14,10 @@
                     <%= record.user.name %>
                     <%= record.title %>
                     <%= record.content %>
-                      <%= link_to record_path, method: :delete do %>
-                        <i class="fas fa-trash-alt"></i>
-                      <% end %>                    
+                    <%= render 'likes/like_form' %>
+                    <%= link_to record_path(record), method: :delete do %>
+                      <i class="fas fa-trash-alt"></i>
+                    <% end %>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">閉じる</button>

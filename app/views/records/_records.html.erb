@@ -12,20 +12,18 @@
                 <% end %>
             </div>
             <div class="card-title text-center">
-              <%= link_to record.user.name, user_path(@record.user) %>
+              <%= link_to record.user.name, user_path(record.user) %>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-8">
         <span class="text-muted">
-          <%= link_to record.title, record_path(record.id) %>
+          <%= record.title %>
         </span>
         <div class="field">
           <p>
-            <%= link_to record_path(record.id)do %>
-              <%= image_tag record.photo.thumb200.url%>
-            <% end %>
+            <%= image_tag record.photo.thumb200.url%>
           </p>
         </div>
       </div>
