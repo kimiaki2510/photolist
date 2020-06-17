@@ -19,6 +19,7 @@ class RecordsController < ApplicationController
   end
 
   def create
+    #byebug
     @record = current_user.records.new(record_params)
     @record.user_id = current_user.id
     if @record.save
