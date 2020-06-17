@@ -1,4 +1,4 @@
-class RecordsController < ApplicationController
+class RecordsController < ApplicationController  
   before_action :require_user_logged_in, except: [:index]
   before_action :correct_user, only: [:destory, :edit, :update]
 
@@ -20,6 +20,7 @@ class RecordsController < ApplicationController
 
   def create
     #byebug
+    #@record = Records.new(record_params)
     @record = current_user.records.new(record_params)
     @record.user_id = current_user.id
     if @record.save
