@@ -17,6 +17,7 @@ class User < ApplicationRecord
   #フォローされているユーザーに自分の情報を取得される機能(自分をフォローしているユーザー)
   has_many :followers, through: :reverses_of_relationship, source: :user
 
+
   has_many :liked_records, through: :likes, source: :record
   #いいね
   has_many :likes, dependent: :destroy
