@@ -16,7 +16,8 @@ class User < ApplicationRecord
   has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
   #フォローされているユーザーに自分の情報を取得される機能(自分をフォローしているユーザー)
   has_many :followers, through: :reverses_of_relationship, source: :user
-  has_many :fav_users, through: :likes, source: :user
+
+  has_many :liked_records, through: :likes, source: :record
   #いいね
   has_many :likes, dependent: :destroy
   #has_many :liked_record, through: :likes, source: :record
@@ -67,6 +68,10 @@ class User < ApplicationRecord
   #def favpost?(record)
     #self.favposts.include?(record)
   #end
+
+  def already_liked?(record)
+    self.likes.exists?(record_id: record.id)
+  end
 
 
 end

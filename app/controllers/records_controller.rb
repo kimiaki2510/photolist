@@ -1,4 +1,4 @@
-class RecordsController < ApplicationController  
+class RecordsController < ApplicationController
   before_action :require_user_logged_in, except: [:index]
   before_action :correct_user, only: [:destory, :edit, :update]
 
@@ -6,6 +6,8 @@ class RecordsController < ApplicationController
     if logged_in?
       @record = current_user.records.build #form with用
       @records = current_user.feed_records.order(id: :desc).page(params[:page])
+      @like = @record.likes.page(params[:page])
+      #@like = Like.new
     end
   end
 

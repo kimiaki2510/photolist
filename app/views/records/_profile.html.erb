@@ -14,7 +14,7 @@
                     <%= record.user.name %>
                     <%= record.title %>
                     <%= record.content %>
-                    <%= render 'likes/like_form' %>
+                    
                     <%= link_to record_path(record), method: :delete do %>
                       <i class="fas fa-trash-alt"></i>
                     <% end %>
