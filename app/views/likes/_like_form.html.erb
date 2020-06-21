@@ -1,5 +1,5 @@
 <div class="like_form">
-  <% if record.iine?(current_user) %>
+  <% if @record.iine?(current_user) %>
     <%= link_to 'いいね解除', like_path(current_user), method: :delete, remote: true%>
   <% else %>
     <%= link_to 'いいね', likes_path(current_user), method: :post, remote: true %>

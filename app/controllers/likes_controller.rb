@@ -24,6 +24,6 @@ class LikesController < ApplicationController
       end
     end
     #@like = Like.find_by(id: params[:id]).destroy
-    #@like.destroy    
+    #@like.destroy
   end
 end

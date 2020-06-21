@@ -70,9 +70,5 @@ class User < ApplicationRecord
     #self.favposts.include?(record)
   #end
 
-  def already_liked?(record)
-    self.likes.exists?(record_id: record.id)
-  end
-
 
 end
