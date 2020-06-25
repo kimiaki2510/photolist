@@ -27,8 +27,13 @@
           </p>
         </div>
       </div>
+      <% if current_user.already_liked?(record) %>
+        <%= button_to 'いいねを取り消す', record_like_path(record), method: :delete%>
+      <% else %>
+        <%= button_to 'いいね', record_likes_path(record) %>
+      <% end %>
 
-      <%= render 'likes/like_form', record: record %>
+
 
     </div>
   <% end %>

@@ -6,8 +6,8 @@ class RecordsController < ApplicationController
     if logged_in?
       #@record = current_user.records.build #form with用
       @records = current_user.feed_records.order(id: :desc).page(params[:page])
+      @like = Like.new
       #@like = @record.likes.page(params[:page])
-      #@like = Like.new
     end
   end
 
@@ -22,8 +22,8 @@ class RecordsController < ApplicationController
 
   def create
     #byebug
-    #@record = Records.new(record_params)
-    @record = current_user.records.new(record_params)
+    @record = Record.new(record_params)
+    #@record = current_user.records.new(record_params)
     @record.user_id = current_user.id
     if @record.save
       flash[:success] = 'メッセージを投稿しました'
@@ -36,9 +36,13 @@ class RecordsController < ApplicationController
   end
 
   def destroy
-    @record = current_user.records.find(params[:id]).destroy
-    flash[:success] = 'メッセージを削除しました'
-    redirect_back(fallback_location: root_path)
+    #byebug
+    @record = Record.find(params[:id])
+    if @record.user_id == current_user.id
+      @record.destroy
+      flash[:success] = 'メッセージを削除しました'
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private
