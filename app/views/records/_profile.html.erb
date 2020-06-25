@@ -13,8 +13,8 @@
                     <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile" %>
                     <%= record.user.name %>
                     <%= record.title %>
-                    <%= record.content %>
-                    
+                    <%= record.content %>                    
+
                     <%= link_to record_path(record), method: :delete do %>
                       <i class="fas fa-trash-alt"></i>
                     <% end %>

@@ -2,28 +2,29 @@ class LikesController < ApplicationController
   before_action :require_user_logged_in
 
   def create
-    @record = Record.find(params[:record_id])
+    byebug
+    @record = Record.find(params[:id])
     unless @record.iine?(current_user)
       @record.iine(current_user)
-      respond_to do |format|
-        format.html { redirect_to root_path }
-        format.js
-      end
+      redirect_to root_path
+      #respond_to do |format|
+        #format.html { redirect_to root_path }
+        #format.js
+      #end
     end
-    #@like = current_user.likes.create(record_id: params[:record_id])
-    #redirect_to root_path
   end
 
   def destroy
-    @record = Like.find(params[:id]).record
+    #byebug
+    #@record = Like.find(params[:id]).record
+    @record = Record.find(params[:id])
     if @record.iine?(current_user)
       @record.uniine(current_user)
-      respond_to do |format|
-        format.html { redirect_to root_path }
-        format.js
-      end
+      redirect_to root_path
+      #respond_to do |format|
+        #format.html { redirect_to root_path }
+        #format.js
+      #end
     end
-    #@like = Like.find_by(id: params[:id]).destroy
-    #@like.destroy
   end
 end
