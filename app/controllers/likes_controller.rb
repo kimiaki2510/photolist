@@ -2,7 +2,7 @@ class LikesController < ApplicationController
   before_action :require_user_logged_in
 
   def create
-    byebug
+    #byebug
     @like = current_user.likes.create(record_id: params[:record_id])
     redirect_to root_path
 
@@ -16,8 +16,8 @@ class LikesController < ApplicationController
     #end
   end
 
-  def destroy    
-    @like = Like.find_by(record_id: params[:record_id], user_id: current_use.id)
+  def destroy
+    @like = Like.find_by(record_id: params[:record_id], user_id: @current_user.id)
     @like.destroy
     redirect_to root_path
     #byebug
