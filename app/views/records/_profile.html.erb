@@ -15,15 +15,7 @@
                     <%= record.title %>
                     <%= record.content %>
 
-                    <% if current_user.already_liked?(record) %>
-                      <%= link_to  record_like_path(record, current_user), method: :delete do %>
-                      <i class="fas fa-heart"></i>
-                      <% end %>
-                    <% else %>
-                      <%= link_to record_likes_path(record), method: :post do %>
-                        <i class="far fa-heart"></i>
-                      <% end %>
-                    <% end %>                   
+                    <%= render 'likes/like_form', record: record %>                    
 
                     <%= link_to record_path(record), method: :delete do %>
                       <i class="fas fa-trash-alt"></i>
