@@ -4,16 +4,13 @@ class RecordsController < ApplicationController
 
   def index
     if logged_in?
-      #@record = current_user.records.build #form with用
       @records = current_user.feed_records.order(id: :desc).page(params[:page])
       @like = Like.new
-      #@like = @record.likes.page(params[:page])
     end
   end
 
   def show
     @record = Record.find(params[:id])
-    #@like = current_user.likes.find_by(record_id: @record.id)
   end
 
   def new
@@ -22,8 +19,7 @@ class RecordsController < ApplicationController
 
   def create
     #byebug
-    @record = Record.new(record_params)
-    #@record = current_user.records.new(record_params)
+    @record = Record.new(record_params)    
     @record.user_id = current_user.id
     if @record.save
       flash[:success] = 'メッセージを投稿しました'

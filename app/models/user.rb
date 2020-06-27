@@ -16,13 +16,9 @@ class User < ApplicationRecord
   has_many :reverses_of_relationship, class_name: 'Relationship', foreign_key: 'follow_id'
   #フォローされているユーザーに自分の情報を取得される機能(自分をフォローしているユーザー)
   has_many :followers, through: :reverses_of_relationship, source: :user
-
-
-
   #いいね
   has_many :likes, dependent: :destroy
   has_many :liked_records, through: :likes, source: :record
-  #has_many :liked_record, through: :likes, source: :record
 #ユーザー画像
   mount_uploader :image, ImageUploader
   #タイムライン
@@ -55,21 +51,6 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
 
-  #投稿をいいねする
-  #def fav(record)
-    #likes.find_or_create_by(record_id: record.id)
-  #end
-
-  #いいねを解除する
-  #def unfav(record)
-    #like = likes.find_by(record_id: record.id)
-    #like.destroy if like
-  #end
-
-  #現在のユーザーがいいねをしたらtrueを返す
-  #def favpost?(record)
-    #self.favposts.include?(record)
-  #end
 
   def already_liked?(record)
     self.likes.exists?(record_id: record.id)
