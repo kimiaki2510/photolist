@@ -1,1 +1,1 @@
-$("#like_form").html("<%= escape_javascript(render('likes/unlike')) %>");
+$("#like_form").html("<%= escape_javascript(render('likes/unlike', id: @record)) %>");

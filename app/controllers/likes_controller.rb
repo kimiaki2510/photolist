@@ -3,10 +3,12 @@ class LikesController < ApplicationController
 
   def create
     #byebug
-    @like = current_user.likes.create(record_id: params[:record_id])    
+    @like = current_user.likes.create(record_id: params[:record_id])
+    #redirect_to root_path
+
     respond_to do |format|
       format.html { redirect_to root_path }
-      format.js
+      #format.js
     end
 
     #@record = Record.find(params[:id])
@@ -22,10 +24,10 @@ class LikesController < ApplicationController
   def destroy
     @like = Like.find_by(record_id: params[:record_id], user_id: @current_user.id)
     @like.destroy
-
+    #redirect_to root_path
     respond_to do |format|
-      format.html { redirect_to root_path }
-      format.js
+      format.html { redirect_to @record }
+      #format.js
     end
 
 
