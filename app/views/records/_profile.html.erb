@@ -7,21 +7,21 @@
             <%= image_tag record.photo.thumb200.url, class: "img-responsive thumbnail　aligncenter size-full wp-image-425", data: {toggle: "modal", target: "#image_Modal"}, style: "cursor:pointer" %>
             <div class="modal fade" id="image_Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
               <div class="modal-dialog modal-lg modal-middle">
-                <div class="modal-content">
-                  <div class="modal-body">
-                    <%= image_tag record.photo.thumb200.url, alt: "baby-1151351_1920", width: "400", height: "300", class: "aligncenter size-full wp-image-425", alt: "baby-1151351_1920" %>
+                <div class="modal-content card">
+                  <div class="modal-header card-header">
                     <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile" %>
                     <%= record.user.name %>
-                    <%= record.title %>
-                    <%= record.content %>
-
-                    <%= render 'likes/like_form', record: record %>                    
-
+                  </div>
+                  <div class="modal-body card-body">
+                    <%= image_tag record.photo.thumb200.url, alt: "baby-1151351_1920", width: "400", height: "300", class: "aligncenter size-full wp-image-425", alt: "baby-1151351_1920" %>
+                      <h5 class="card-title"><%= record.title %></h5>
+                      <p class="card-text"><%= record.content %></p>
+                  </div>
+                  <div class="modal-footer">
+                    <%= render 'likes/like_form', record: record %>
                     <%= link_to record_path(record), method: :delete do %>
                       <i class="fas fa-trash-alt"></i>
                     <% end %>
-                  </div>
-                  <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">閉じる</button>
                   </div>
                 </div>
