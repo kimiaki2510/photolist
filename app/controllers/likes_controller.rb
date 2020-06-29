@@ -4,12 +4,11 @@ class LikesController < ApplicationController
   def create
     #byebug
     @like = current_user.likes.create(record_id: params[:record_id])
-    #redirect_to root_path
-
-    respond_to do |format|
-      format.html { redirect_to root_path }
+    redirect_to root_path
+    #respond_to do |format|
+      #format.html { redirect_to root_path }
       #format.js
-    end
+    #end
 
     #@record = Record.find(params[:id])
     #unless @record.iine?(current_user)
@@ -24,11 +23,11 @@ class LikesController < ApplicationController
   def destroy
     @like = Like.find_by(record_id: params[:record_id], user_id: @current_user.id)
     @like.destroy
-    #redirect_to root_path
-    respond_to do |format|
-      format.html { redirect_to @record }
+    redirect_to root_path
+    #respond_to do |format|
+      #format.html { redirect_to root_path }
       #format.js
-    end
+    #end
 
 
     #byebug

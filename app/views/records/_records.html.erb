@@ -1,12 +1,12 @@
 <div class="container">
   <% records.each do |record| %>
-    <div class="row">
+    <div class="row card">
       <div class="col-md-4  img-hidden media-body">
         <div class="field">
           <div class="card_profile">
             <div class="card-header">
                 <% if record.user.image? %>
-                  <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile" %>
+                  <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile"%>
                 <% else %>
                   <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
                 <% end %>
@@ -17,8 +17,8 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8">
-        <span class="text-muted">
+      <div class="col-md-8 card-body">
+        <span class="text-muted card-title">
           <%= record.title %>
         </span>
         <div class="field">
@@ -27,7 +27,7 @@
           </p>
         </div>
       </div>
-      <%= render 'likes/like_form', record: record %>  
+      <%= render 'likes/like_form', record: record %>
     </div>
   <% end %>
   <%= paginate records %>
