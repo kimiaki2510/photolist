@@ -4,25 +4,23 @@
       <div class="col-md-4  img-hidden media-body">
         <div class="field">
           <div class="card_profile">
-            <div class="col-md-8 card-header">
-              <% if record.user.image? %>
-                <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile"%>
-              <% else %>
-                <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
-              <% end %>
-              <div class="card-title text-center">
-                <%= link_to record.user.name, user_path(record.user) %>
-              </div>
+            <% if record.user.image? %>
+              <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile"%>
+            <% else %>
+              <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
+            <% end %>
+            <div class="card-title-name text-center">
+              <%= link_to record.user.name, user_path(record.user) %>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-8 card-body">
-        <span class="text-muted card-title">
+        <h4 class="text-muted card-title-title">
           <%= record.title %>
-        </span>
+        </h4>
         <div class="field">
-          <p><%= image_tag record.photo.thumb200.url%></p>
+          <p><%= image_tag record.photo.thumb200.url, :class => "timeline_photo" %></p>
         </div>
       </div>
       <%= render 'likes/like_form', record: record %>
