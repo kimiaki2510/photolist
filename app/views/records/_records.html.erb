@@ -1,30 +1,42 @@
-<div class="container">
-  <% records.each do |record| %>
-    <div class="row card">
-      <div class="col-md-4  img-hidden media-body">
-        <div class="field">
-          <div class="card_profile">
-            <% if record.user.image? %>
-              <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile"%>
-            <% else %>
-              <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
-            <% end %>
-            <div class="card-title-name text-center">
-              <%= link_to record.user.name, user_path(record.user) %>
+<div class="row">
+  <aside class="col-12">
+    <ul class="list-unstyled">
+      <li class="media mb-3">
+        <div class="media-body">
+          <table class="table">
+            <div class="container">
+              <% records.each do |record| %>
+                <div class="row card col-12">
+                  <div class="col-12  img-hidden media-body">
+                    <div class="field">
+                      <div class="card_profile">
+                        <% if record.user.image? %>
+                          <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile"%>
+                        <% else %>
+                          <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
+                        <% end %>
+                        <div class="card-title-name text-center">
+                          <%= link_to record.user.name, user_path(record.user) %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 card-body">
+                    <h4 class="text-muted card-title-title col-md-8">
+                      <%= record.title %>
+                    </h4>
+                    <div class="field">
+                      <p><%= image_tag record.photo.thumb200.url, :class => "timeline_photo col-md-8" %></p>
+                    </div>
+                  </div>
+                  <%= render 'likes/like_form', record: record %>
+                </div>
+              <% end %>
+              <%= paginate records %>
             </div>
-          </div>
+          </table>
         </div>
-      </div>
-      <div class="col-md-8 card-body">
-        <h4 class="text-muted card-title-title">
-          <%= record.title %>
-        </h4>
-        <div class="field">
-          <p><%= image_tag record.photo.thumb200.url, :class => "timeline_photo" %></p>
-        </div>
-      </div>
-      <%= render 'likes/like_form', record: record %>
-    </div>
-  <% end %>
-  <%= paginate records %>
+      </li>
+    </ul>
+  </aside>
 </div>
