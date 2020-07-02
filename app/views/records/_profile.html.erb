@@ -4,8 +4,10 @@
       <table class="table">
         <% records.each do |record| %>
           <tr>
+            <!-- モーダルのトリガー-->
             <%= image_tag record.photo.thumb200.url, class: "img-responsive thumbnail　aligncenter size-full wp-image-425", data: {toggle: "modal", target: "#image_Modal"}, style: "cursor:pointer" %>
             <div class="modal fade" id="image_Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+              <!-- モーダルのdialogー-->
               <div class="modal-dialog modal-lg modal-middle">
                 <div class="modal-content card">
                   <div class="modal-header card-header">
@@ -15,7 +17,6 @@
                       <%= record.user.name %>
                     </div>
                   </div>
-
                   <div class="modal-body">
                     <%= image_tag record.photo.thumb200.url, alt: "baby-1151351_1920", width: "400", height: "300", class: "aligncenter size-full wp-image-425", alt: "baby-1151351_1920" %>
                       <p class="card-text"><%= record.content %></p>
