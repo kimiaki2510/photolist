@@ -25,5 +25,35 @@
     </div>
   </th>
 </table>
-<%= render 'likes/like_form' %>
-<%= link_to '投稿を削除する', record_path, method: :delete %>
+<%= link_to '投稿を削除する', record_path(@record), method: :delete %>
+
+<div class="row card col-12">
+  <div class="col-12  img-hidden media-body">
+    <div class="field">
+      <div class="card_profile">
+        <% if @record.user.image? %>
+          <%= image_tag @record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile"%>
+        <% else %>
+          <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
+        <% end %>
+        <div class="card-title-name text-center">
+          <%= link_to @record.user.name, user_path(@record.user) %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 card-body">
+    <h4 class="text-muted card-title-title col-md-8">
+      <%= @record.title %>
+    </h4>
+    <div class="field">
+      <%= image_tag @record.photo.thumb200.url, :class => "timeline_photo col-md-8" %>
+    </div
+    <div class="card-footer">
+      <%= @record.content %>
+    </div>
+  </div>
+  <%= link_to record_path(@record), method: :delete do %>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
+</div>

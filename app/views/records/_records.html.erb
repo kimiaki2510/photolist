@@ -26,7 +26,9 @@
                       <%= record.title %>
                     </h4>
                     <div class="field">
-                      <p><%= image_tag record.photo.thumb200.url, :class => "timeline_photo col-md-8" %></p>
+                      <%= link_to record_path(record.id)do %>
+                        <%= image_tag record.photo.thumb200.url, :class => "timeline_photo col-md-8" %>
+                      <% end %>                      
                     </div>
                   </div>
                   <%= render 'likes/like_form', record: record %>

@@ -4,6 +4,9 @@
       <table class="table">
         <% records.each do |record| %>
           <tr>
+            <%= link_to record_path(record.id)do %>
+              <%= image_tag record.photo.thumb200.url %>
+            <% end %>
             <!-- モーダルのトリガー-->
             <%= image_tag record.photo.thumb200.url, class: "img-responsive thumbnail　aligncenter size-full wp-image-425", data: {toggle: "modal", target: "#image_Modal"}, style: "cursor:pointer" %>
             <div class="modal fade" id="image_Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">

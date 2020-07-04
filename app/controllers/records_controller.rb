@@ -10,7 +10,8 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record.find(params[:id])
+    #@record = Record.find(params[:id])
+    @record = current_user.records.find(params[:id])
   end
 
   def new
@@ -19,7 +20,7 @@ class RecordsController < ApplicationController
 
   def create
     #byebug
-    @record = Record.new(record_params)    
+    @record = Record.new(record_params)
     @record.user_id = current_user.id
     if @record.save
       flash[:success] = 'メッセージを投稿しました'
@@ -33,11 +34,12 @@ class RecordsController < ApplicationController
 
   def destroy
     #byebug
+    #@record = current_user.records.find(params[:id])
     @record = Record.find(params[:id])
     if @record.user_id == current_user.id
       @record.destroy
       flash[:success] = 'メッセージを削除しました'
-      redirect_back(fallback_location: root_path)
+      redirect_to root_url
     end
   end
 
