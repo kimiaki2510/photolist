@@ -49,7 +49,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #def extension_whitelist
   #jpg, jpeg, gif, pngしか受け付けない
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png JPG)
   end
 
   # Override the filename of the uploaded files:
