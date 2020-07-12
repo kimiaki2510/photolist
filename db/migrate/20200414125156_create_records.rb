@@ -3,10 +3,10 @@ class CreateRecords < ActiveRecord::Migration[5.2]
     create_table :records do |t|
       t.string :title
       t.string :content
-      t.references :user_id, foreign_key: true
+      t.references :user, foreign_key: true
       t.string :photo
 
-      t.timestamps
+      t.timestamps      
     end
   end
 end

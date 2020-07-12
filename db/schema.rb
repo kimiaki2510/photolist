@@ -14,26 +14,27 @@ ActiveRecord::Schema.define(version: 2020_05_04_014945) do
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "record_id"
+    t.bigint "record_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["record_id"], name: "index_likes_on_record_id"
+    t.index ["user_id", "record_id"], name: "index_likes_on_user_id_and_record_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.bigint "user_id"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "follow_id"
+    t.bigint "follow_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
@@ -50,4 +51,9 @@ ActiveRecord::Schema.define(version: 2020_05_04_014945) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "likes", "records"
+  add_foreign_key "likes", "users"
+  add_foreign_key "records", "users"
+  add_foreign_key "relationships", "users"
+  add_foreign_key "relationships", "users", column: "follow_id"
 end
