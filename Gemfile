@@ -36,6 +36,8 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'mini_magick', '~> 4.8'
 #画像アップローダー
 gem 'carrierwave'
+#クラウドサービスをrubyから利用しやすくするライブラリ
+gem 'fog'
 #画像のリサイズ
 gem 'rmagick'
 
