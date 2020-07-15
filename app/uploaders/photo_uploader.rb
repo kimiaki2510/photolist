@@ -57,7 +57,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   #jpg, jpeg, gif, pngしか受け付けない
   def extension_white_list
-    %w(jpg jpeg gif png JPG)
+    %w(jpg jpeg gif png)
   end
 
   # Override the filename of the uploaded files:

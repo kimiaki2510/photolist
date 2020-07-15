@@ -13,7 +13,7 @@
                         <% if record.user.image? %>
                           <%= image_tag record.user.image.thumb.url, :alt => "avatar", :class => "icon_profile"%>
                         <% else %>
-                          <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
+                          <%= image_tag("/images/default.jpg", :alt => "avatar", :class => "icon_profile")%>
                         <% end %>
                         <div class="card-title-name text-center">
                           <%= link_to record.user.name, user_path(record.user) %>
@@ -28,7 +28,7 @@
                     <div class="field">
                       <%= link_to record_path(record.id)do %>
                         <%= image_tag record.photo.thumb200.url, :class => "timeline_photo col-md-8" %>
-                      <% end %>                      
+                      <% end %>
                     </div>
                   </div>
                   <%= render 'likes/like_form', record: record %>
