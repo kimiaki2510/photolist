@@ -29,7 +29,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   #画像の上限を200px
   process :resize_to_limit => [100,100]
   #保存形式をJPGにする
-  process :convert => 'jpg'
+  #process :convert => 'jpg'
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
@@ -49,7 +49,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  
+
   #jpg, jpeg, gif, pngしか受け付けない
   #def extension_white_list
     #%w(jpg jpeg gif png)

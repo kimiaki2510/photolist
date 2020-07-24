@@ -37,7 +37,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #画像の上限を200px
   process :resize_to_limit => [100,100]
   #保存形式をJPGにする
-  process :convert => 'jpg'
+  #process :convert => 'jpg'
 
   # Create different versions of your uploaded files:
   #サムネイルを生成する設定
