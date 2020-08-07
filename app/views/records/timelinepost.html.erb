@@ -1,0 +1,10 @@
+<div class="col-12 card-body">
+  <h4 class="text-muted card-title-title col-md-8">
+    <%= record.title %>
+  </h4>
+  <div class="field">
+    <%= link_to record_path(record.id)do %>
+      <%= image_tag record.photo.thumb200.url, :class => "timeline_photo col-md-8" %>
+    <% end %>
+  </div>
+</div>
