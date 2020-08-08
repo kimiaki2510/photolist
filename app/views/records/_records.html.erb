@@ -8,8 +8,8 @@
             <div class="container">
               <% records.each do |record| %>
                 <div class="row card col-12 col-xs-6">
-                  <%= render 'records/timelineuser' %>
-                  <%= render 'records/timelinepost' %>
+                  <%= render 'records/timelineuser', record: record %>
+                  <%= render 'records/timelinepost', record: record %>
                   <%= render 'likes/like_form', record: record %>
                 </div>
               <% end %>
