@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
 
+#ログイン
   def create
     email = params[:session][:email].downcase
     password = params[:session][:password]
@@ -14,6 +15,7 @@ class SessionsController < ApplicationController
     end
   end
 
+#ログアウト
   def destroy
     log_out
     flash[:success] = 'ログアウトしました'
@@ -22,6 +24,7 @@ class SessionsController < ApplicationController
 
   private
 
+#登録ユーザー判別
     def login(email, password)
       @user = User.find_by(email: email)
       if @user && @user.authenticate(password)

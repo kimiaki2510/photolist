@@ -1,13 +1,20 @@
 class User < ApplicationRecord
+
+#メールアドレスの小文字化
   before_save { self.email.downcase! }
+
+#バリデーション
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }
   has_secure_password
-#recordsと結びつけ
+
+
+#モデルとの結び付け
+  #recordsと結びつけ
   has_many :records
-#relationshipsと結びつけ
+  #relationshipsと結びつけ
   #自分がフォローしているユーザー
   has_many :relationships
   #フォローしているユーザー情報を取得する機能(自分がフォローしているユーザー)
@@ -19,19 +26,26 @@ class User < ApplicationRecord
   #いいね
   has_many :likes, dependent: :destroy
   has_many :liked_records, through: :likes, source: :record
-#ユーザー画像
+
+
+#ユーザー機能
+  #ユーザー画像
   mount_uploader :image, ImageUploader
   #タイムライン
   def feed_records
     Record.where(user_id: self.following_ids + [self.id])
   end
-#渡された文字列のハッシュ値を返す
+
+  #渡された文字列のハッシュ値を返す
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
-#フォロー
+
+
+#インスタンスメソッド
+  #フォロー
   #自分自身でないか
   def follow(other_user)
     unless self == other_user

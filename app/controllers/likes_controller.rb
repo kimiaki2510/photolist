@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
   before_action :require_user_logged_in
 
+#いいね
   def create
     #byebug
     @like = current_user.likes.create(record_id: params[:record_id])
@@ -9,17 +10,9 @@ class LikesController < ApplicationController
       #format.html { redirect_to root_path }
       #format.js
     #end
-
-    #@record = Record.find(params[:id])
-    #unless @record.iine?(current_user)
-      #@record.iine(current_user)
-      #respond_to do |format|
-        #format.html { redirect_to root_path }
-        #format.js
-      #end
-    #end
   end
 
+#いいねを外す
   def destroy
     @like = Like.find_by(record_id: params[:record_id], user_id: @current_user.id)
     @like.destroy
@@ -27,18 +20,6 @@ class LikesController < ApplicationController
     #respond_to do |format|
       #format.html { redirect_to root_path }
       #format.js
-    #end
-
-
-    #byebug
-    #@record = Like.find(params[:id]).record
-    #@record = Record.find(params[:id])
-    #if @record.iine?(current_user)
-      #@record.uniine(current_user)
-      #respond_to do |format|
-        #format.html { redirect_to root_path }
-        #format.js
-      #end
     #end
   end
 end

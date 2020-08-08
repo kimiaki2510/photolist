@@ -2,6 +2,7 @@ class RecordsController < ApplicationController
   before_action :require_user_logged_in, except: [:index]
   before_action :correct_user, only: [:destory, :edit, :update]
 
+#タイムライン or 未登録時の最初の画面
   def index
     if logged_in?
       @records = current_user.feed_records.order(id: :desc).page(params[:page])
@@ -9,15 +10,18 @@ class RecordsController < ApplicationController
     end
   end
 
+#投稿詳細画面
   def show
     #@record = Record.find(params[:id])
     @record = current_user.records.find(params[:id])
   end
 
+#投稿作成画面
   def new
     @record = Record.new
   end
 
+#投稿を作成
   def create
     #byebug
     @record = Record.new(record_params)
@@ -32,6 +36,7 @@ class RecordsController < ApplicationController
     end
   end
 
+#投稿削除
   def destroy
     #byebug
     #@record = current_user.records.find(params[:id])
@@ -45,10 +50,12 @@ class RecordsController < ApplicationController
 
   private
 
+#ストロングパラメーター(入力値の制限)
     def record_params
       params.require(:record).permit(:title, :photo, :content)
     end
 
+#投稿者のみ確認できる
     def correct_user
       @record = current_user.records.find_by(id: params[:id])
       unless @record

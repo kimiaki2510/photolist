@@ -1,6 +1,7 @@
 class RelationshipsController < ApplicationController
   before_action :require_user_logged_in
 
+#フォローする
   def create
     @user = User.find(params[:follow_id])
     current_user.follow(@user)
@@ -10,6 +11,7 @@ class RelationshipsController < ApplicationController
     end
   end
 
+#フォローを外す
   def destroy
     @user = User.find(params[:follow_id])
     current_user.unfollow(@user)
