@@ -3,23 +3,22 @@ class LikesController < ApplicationController
 
 #いいね
   def create
-    #byebug
     @like = current_user.likes.create(record_id: params[:record_id])
-    redirect_to root_path
-    #respond_to do |format|
-      #format.html { redirect_to root_path }
-      #format.js
-    #end
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   end
 
 #いいねを外す
   def destroy
-    @like = Like.find_by(record_id: params[:record_id], user_id: @current_user.id)
-    @like.destroy
-    redirect_to root_path
-    #respond_to do |format|
-      #format.html { redirect_to root_path }
-      #format.js
-    #end
+    like = current_user.likes.find_by(record_id: params[:record_id])
+    like.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   end
+
+  private
 end

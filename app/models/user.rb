@@ -25,7 +25,6 @@ class User < ApplicationRecord
   has_many :followers, through: :reverses_of_relationship, source: :user
   #いいね
   has_many :likes, dependent: :destroy
-  has_many :liked_records, through: :likes, source: :record
 
 
 #ユーザー機能
@@ -64,11 +63,5 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
-
-
-  def already_liked?(record)
-    self.likes.exists?(record_id: record.id)
-  end
-
 
 end
