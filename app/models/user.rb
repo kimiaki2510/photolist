@@ -25,6 +25,9 @@ class User < ApplicationRecord
   has_many :followers, through: :reverses_of_relationship, source: :user
   #いいね
   has_many :likes, dependent: :destroy
+  #コメント
+  has_many :comment, dependent: :destroy
+
 
 
 #ユーザー機能

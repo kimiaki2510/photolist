@@ -1,1 +1,1 @@
-$("#like_form").html("<%= escape_javascript(render(partial: 'likes/unlike', locals: {record: @record})) %>");
+$("#like_button").html("<%= j(render(partial: 'likes/like_form', locals: {record: @record})) %>");

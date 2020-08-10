@@ -14,6 +14,8 @@ class RecordsController < ApplicationController
   def show
     #@record = Record.find(params[:id])
     @record = current_user.records.find(params[:id])
+    @comment = Comment.new
+    @comments = @record.comments.order(created_at: :desc)
   end
 
 #投稿作成画面
