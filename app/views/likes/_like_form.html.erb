@@ -1,5 +1,4 @@
 <!-- いいね判断 -->
-
   <% if record.like_user(current_user) %>
     <%= link_to  record_like_path(record ,current_user), method: :delete, remote: true do %>
       <i class="fas fa-heart"></i>

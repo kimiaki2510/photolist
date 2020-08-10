@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  def created
+  def create
     @record = Record.find(params[:record_id])
     @comment = @record.comments.build(comment_params)
     if @comment.user_id = current_user.id
