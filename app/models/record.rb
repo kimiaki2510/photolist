@@ -3,7 +3,7 @@ class Record < ApplicationRecord
 #モデルとの結びつけ
   belongs_to :user
   has_many :likes, dependent: :destroy
-  has_many :comment, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
 #Record機能追加
   mount_uploader :photo, PhotoUploader

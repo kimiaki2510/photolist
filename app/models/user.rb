@@ -26,7 +26,7 @@ class User < ApplicationRecord
   #いいね
   has_many :likes, dependent: :destroy
   #コメント
-  has_many :comment, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
 
 

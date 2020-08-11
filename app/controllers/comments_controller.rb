@@ -3,11 +3,9 @@ class CommentsController < ApplicationController
   def create
     @record = Record.find(params[:record_id])
     @comment = @record.comments.build(comment_params)
-    if @comment.user_id = current_user.id
-      @comment.save
-      render :index
-    else
-      render :index
+    @comment.user_id = current_user.id
+    @comment.save
+    render :index
     end
   end
 
