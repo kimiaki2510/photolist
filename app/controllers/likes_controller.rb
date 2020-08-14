@@ -6,6 +6,10 @@ class LikesController < ApplicationController
   def create
     @like = current_user.likes.create(record_id: params[:record_id])
     @record.reload
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   end
 
 #いいねを外す
@@ -13,6 +17,10 @@ class LikesController < ApplicationController
     like = current_user.likes.find_by(record_id: params[:record_id], user_id: current_user.id)
     like.destroy
     @record.reload
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   end
 
   private

@@ -1,8 +1,10 @@
 <!-- いいね判断 -->
-<div class="like_form">
-  <% if record.like_user(current_user.id) %>
-    <%= render 'likes/unlike', record: record %>
+  <% if record.like_user(current_user) %>
+    <%= link_to  record_like_path(record ,current_user), method: :delete, remote: true do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
   <% else %>
-    <%= render 'likes/like', record: record %>
+    <%= link_to record_likes_path(record_id: record.id), method: :post, remote: true do %>
+      <i class="far fa-heart"></i>
+    <% end %>
   <% end %>
-</div>
