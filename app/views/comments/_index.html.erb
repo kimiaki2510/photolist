@@ -10,7 +10,7 @@
         </div>
         <div class="comment-text">
           <!-- ユーザー情報 -->
-          <p><%= link_to "@#{comment.user.name}", users_path(comment.user.id) %></p>
+          <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
           <div class="comment-entry">
             <%= comment.content %>
             <% if comment.user == current_user %>
@@ -32,28 +32,29 @@
 <div class="collapse" id="collapseExample">
   <% comments.offset(2).each do |comment| %>
     <% unless comment.id.nil? %>
-      <li class="comment-container">
-        <div class="comment-box">
-          <div class="comment-avatar">
-            <!-- 画像 -->
-          </div>
-          <div class="comment-text">
-            <!-- ユーザー-->
-            <p><%= link_to "@#{comment.user.name}", users_path(comment.user.id) %></p>
-            <div class="comment-entry">
-              <%= comment.content %>
-              <% if comment.user == current_user %>
-                <%= link_to record_comment_path(comment.record_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
-                  <li class="fas fa-trash" style="color: black;"></li>
-                <% end %>
-              <% end %>
-            </div>
-            <span class="comment-data pull-right">
-              <%= comment.created_at.strftime('%Y%m%d %H:%M:%S')%>
-            </span>
-          </div>
+    <li class="comment-container">
+      <div class="comment-box">
+        <div class="comment-avatar">
+          <!-- イメージ画像-->
         </div>
-      </li>
+        <div class="comment-text">
+          <!-- ユーザー情報 -->
+          <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
+          <div class="comment-entry">
+            <%= comment.content %>
+            <% if comment.user == current_user %>
+            <!-- コメント削除-->
+              <%= link_to record_comment_path(comment.record_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do%>
+                <i class="fas fa-trash" style="color: black;"></i>
+              <% end %>
+            <% end %>
+          </div>
+          <span class="comment-data pull-right">
+            <%= comment.created_at.strftime('%Y%m%d %H:%M:%S')%>
+          </span>
+        </div>
+      </div>
+    </li>
     <% end %>
   <% end %>
 </div>
