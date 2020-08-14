@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  #before_action :comment_params
 
   def create
     @record = Record.find(params[:record_id])
@@ -6,7 +7,6 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.save
     render :index
-    end
   end
 
   def destroy
