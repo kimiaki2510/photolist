@@ -1,8 +1,14 @@
 FROM ruby:2.5.3
-RUN apt-get update -qq && apt-get install -y build-essential nodejs
-RUN mkdir /app
-WORKDIR /app
-COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
+RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y postgresql-client --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+
+WORKDIR /photolist
+
+ADD Gemfile /photolist/Gemfile
+ADD Gemfile.lock /photolist/Gemfile.lock
+
+RUN gem install bundler
 RUN bundle install
-COPY . /app
+
+ADD . /photolist
