@@ -1,5 +1,5 @@
-current directory: /Users/sugiyamakimiaki/Desktop/photolist/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.3/ext/msgpack
-/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/bin/ruby -r ./siteconf20200712-10220-y5lxe.rb extconf.rb
+current directory: /Users/sugiyama/Desktop/photolist/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.3/ext/msgpack
+/Users/sugiyama/.rbenv/versions/2.5.3/bin/ruby -r ./siteconf20200823-9487-1bl1wd0.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_str_replace() in ruby.h... yes
@@ -11,10 +11,10 @@ checking for rb_hash_dup() in ruby.h... yes
 checking for rb_hash_clear() in ruby.h... yes
 creating Makefile
 
-current directory: /Users/sugiyamakimiaki/Desktop/photolist/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.3/ext/msgpack
+current directory: /Users/sugiyama/Desktop/photolist/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.3/ext/msgpack
 make "DESTDIR=" clean
 
-current directory: /Users/sugiyamakimiaki/Desktop/photolist/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.3/ext/msgpack
+current directory: /Users/sugiyama/Desktop/photolist/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.3/ext/msgpack
 make "DESTDIR="
 compiling buffer.c
 compiling buffer_class.c
@@ -34,6 +34,6 @@ static VALUE Unpacker_peek_next_type(VALUE self)
 compiling unpacker_ext_registry.c
 linking shared-object msgpack/msgpack.bundle
 
-current directory: /Users/sugiyamakimiaki/Desktop/photolist/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.3/ext/msgpack
+current directory: /Users/sugiyama/Desktop/photolist/vendor/bundle/ruby/2.5.0/gems/msgpack-1.3.3/ext/msgpack
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20200712-10220-1m9dm33/msgpack
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20200823-9487-adwt2q/msgpack

@@ -14,10 +14,13 @@ ActiveRecord::Schema.define(version: 2020_08_10_021106) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id"
-    t.integer "record_id"
+    t.bigint "user_id"
+    t.bigint "record_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["record_id"], name: "index_comments_on_record_id"
+    t.index ["user_id", "record_id"], name: "index_comments_on_user_id_and_record_id", unique: true
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -59,6 +62,8 @@ ActiveRecord::Schema.define(version: 2020_08_10_021106) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "records"
+  add_foreign_key "comments", "users"
   add_foreign_key "likes", "records"
   add_foreign_key "likes", "users"
   add_foreign_key "records", "users"

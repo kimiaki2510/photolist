@@ -12,7 +12,7 @@ find_executable: checking for pkg-config... -------------------- yes
 
 assert_has_dev_libs!: checking for outdated ImageMagick version (<= 6.7.7)... -------------------- no
 
-Detected ImageMagick version: 7.0.8
+Detected ImageMagick version: 7.0.10
 --------------------
 
 find_executable: checking for clang... -------------------- yes
@@ -21,7 +21,7 @@ find_executable: checking for clang... -------------------- yes
 
 have_macro: checking for __GNUC__... -------------------- yes
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
 ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
 checked program was:
@@ -34,7 +34,7 @@ checked program was:
 6: }
 /* end */
 
-"clang -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7   -c conftest.c"
+"clang -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7   -c conftest.c"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -50,7 +50,7 @@ checked program was:
 
 have_header: checking for MagickCore/MagickCore.h... -------------------- yes
 
-"clang -E -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
+"clang -E -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -62,7 +62,7 @@ checked program was:
 
 have_func: checking for rb_gc_adjust_memory_usage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
 ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
 checked program was:
@@ -95,7 +95,7 @@ checked program was:
 
 have_func: checking for posix_memalign() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
 ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
 checked program was:
@@ -128,7 +128,7 @@ checked program was:
 
 have_func: checking for malloc_usable_size() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- no
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 conftest.c:22:57: error: use of undeclared identifier 'malloc_usable_size'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))malloc_usable_size; return !p; }
                                                         ^
@@ -159,12 +159,12 @@ checked program was:
 22: int t(void) { void ((*volatile p)()); p = (void ((*)()))malloc_usable_size; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
 ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
 Undefined symbols for architecture x86_64:
   "_malloc_usable_size", referenced from:
-      _t in conftest-c36a8d.o
+      _t in conftest-a901d5.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -198,7 +198,7 @@ checked program was:
 
 have_func: checking for malloc_size() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 conftest.c:22:57: error: use of undeclared identifier 'malloc_size'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))malloc_size; return !p; }
                                                         ^
@@ -229,7 +229,7 @@ checked program was:
 22: int t(void) { void ((*volatile p)()); p = (void ((*)()))malloc_size; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
 ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
 checked program was:
@@ -263,7 +263,7 @@ checked program was:
 
 have_func: checking for _aligned_msize() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- no
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 conftest.c:22:57: error: use of undeclared identifier '_aligned_msize'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))_aligned_msize; return !p; }
                                                         ^
@@ -294,12 +294,12 @@ checked program was:
 22: int t(void) { void ((*volatile p)()); p = (void ((*)()))_aligned_msize; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
 ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
 Undefined symbols for architecture x86_64:
   "__aligned_msize", referenced from:
-      _t in conftest-f3ba93.o
+      _t in conftest-e6649f.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -333,7 +333,7 @@ checked program was:
 
 have_func: checking for GetImageChannelEntropy() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- no
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 conftest.c:22:57: error: use of undeclared identifier 'GetImageChannelEntropy'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))GetImageChannelEntropy; return !p; }
                                                         ^
@@ -364,12 +364,12 @@ checked program was:
 22: int t(void) { void ((*volatile p)()); p = (void ((*)()))GetImageChannelEntropy; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
 ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
 Undefined symbols for architecture x86_64:
   "_GetImageChannelEntropy", referenced from:
-      _t in conftest-bec4f4.o
+      _t in conftest-0ada47.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -403,7 +403,7 @@ checked program was:
 
 have_func: checking for SetImageGray() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
 ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
 ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
 checked program was:
@@ -434,13 +434,11 @@ checked program was:
 
 --------------------
 
-have_func: checking for SetMagickAlignedMemoryMethods() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- no
+have_func: checking for SetMagickAlignedMemoryMethods() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
-conftest.c:22:57: error: use of undeclared identifier 'SetMagickAlignedMemoryMethods'
-int t(void) { void ((*volatile p)()); p = (void ((*)()))SetMagickAlignedMemoryMethods; return !p; }
-                                                        ^
-1 error generated.
+"clang -o conftest -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyama/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
+ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
+ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -467,46 +465,11 @@ checked program was:
 22: int t(void) { void ((*volatile p)()); p = (void ((*)()))SetMagickAlignedMemoryMethods; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/lib  -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI  -lruby.2.5.3-static -framework Foundation  -lpthread -ldl -lobjc "
-ld: warning: text-based stub file /System/Library/Frameworks//Foundation.framework/Foundation.tbd and library file /System/Library/Frameworks//Foundation.framework/Foundation are out of sync. Falling back to library file for linking.
-ld: warning: text-based stub file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation.tbd and library file /System/Library/Frameworks//CoreFoundation.framework/Versions/A/CoreFoundation are out of sync. Falling back to library file for linking.
-Undefined symbols for architecture x86_64:
-  "_SetMagickAlignedMemoryMethods", referenced from:
-      _t in conftest-27e9e4.o
-ld: symbol(s) not found for architecture x86_64
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-checked program was:
-/* begin */
- 1: #include "ruby.h"
- 2: 
- 3: #include <assert.h>
- 4: #include <ctype.h>
- 5: #include <stdio.h>
- 6: #include <stdlib.h>
- 7: #include <math.h>
- 8: #include <time.h>
- 9: #include <sys/types.h>
-10: #include <MagickCore/MagickCore.h>
-11: 
-12: /*top*/
-13: extern int t(void);
-14: int main(int argc, char **argv)
-15: {
-16:   if (argc > 1000000) {
-17:     printf("%p", &t);
-18:   }
-19: 
-20:   return 0;
-21: }
-22: extern void SetMagickAlignedMemoryMethods();
-23: int t(void) { SetMagickAlignedMemoryMethods(); return 0; }
-/* end */
-
 --------------------
 
 have_header: checking for malloc.h... -------------------- no
 
-"clang -E -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
+"clang -E -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
 conftest.c:3:10: fatal error: 'malloc.h' file not found
 #include <malloc.h>
          ^~~~~~~~~~
@@ -522,7 +485,7 @@ checked program was:
 
 have_header: checking for malloc/malloc.h... -------------------- yes
 
-"clang -E -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyamakimiaki/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
+"clang -E -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-darwin17 -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0/ruby/backward -I/Users/sugiyama/.rbenv/versions/2.5.3/include/ruby-2.5.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -541,20 +504,21 @@ extconf.h is:
  5: #define HAVE_POSIX_MEMALIGN 1
  6: #define HAVE_MALLOC_SIZE 1
  7: #define HAVE_SETIMAGEGRAY 1
- 8: #define HAVE_MALLOC_MALLOC_H 1
- 9: #define RUBY_VERSION_STRING ruby 2.5.3
-10: #define RMAGICK_VERSION_STRING RMagick 4.1.2
-11: #define IMAGEMAGICK_GREATER_THAN_EQUAL_6_8_9 1
-12: #define IMAGEMAGICK_GREATER_THAN_EQUAL_6_9_0 1
-13: #define IMAGEMAGICK_7 1
-14: #endif
+ 8: #define HAVE_SETMAGICKALIGNEDMEMORYMETHODS 1
+ 9: #define HAVE_MALLOC_MALLOC_H 1
+10: #define RUBY_VERSION_STRING ruby 2.5.3
+11: #define RMAGICK_VERSION_STRING RMagick 4.1.2
+12: #define IMAGEMAGICK_GREATER_THAN_EQUAL_6_8_9 1
+13: #define IMAGEMAGICK_GREATER_THAN_EQUAL_6_9_0 1
+14: #define IMAGEMAGICK_7 1
+15: #endif
 /* end */
 
 ======================================================================
-Sun 12 Jul 20 22:51:41
+Sun 23 Aug 20 20:03:07
 This installation of RMagick 4.1.2 is configured for
-Ruby 2.5.3 (x86_64-darwin17) and ImageMagick 7.0.8
+Ruby 2.5.3 (x86_64-darwin17) and ImageMagick 7.0.10
 ======================================================================
 
 
-Configured compile options: {:magick_version=>"7.0.8", :local_libs=>" -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI", :cflags=>" -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7 -std=gnu99", :cppflags=>" -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.8-68/include/ImageMagick-7", :ldflags=>" -L/usr/local/Cellar/imagemagick/7.0.8-68/lib -lMagickCore-7.Q16HDRI", :defs=>[], :config_h=>"Makefile rmagick.h"}
+Configured compile options: {:magick_version=>"7.0.10", :local_libs=>" -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI", :cflags=>" -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7 -std=gnu99", :cppflags=>" -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.10-28/include/ImageMagick-7", :ldflags=>" -L/usr/local/Cellar/imagemagick/7.0.10-28/lib -lMagickCore-7.Q16HDRI", :defs=>[], :config_h=>"Makefile rmagick.h"}

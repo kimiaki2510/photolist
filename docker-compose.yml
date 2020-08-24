@@ -4,24 +4,16 @@ services:
     image: mysql:8.0.18
     volumes:
       - mysql_data:/var/lib/mysql
-    environment:
-      MYSQL_DATABASE: root
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
     ports:
       - "3305:3306"
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    tty: true
-    stdin_open: true
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'"
     depends_on:
       - db
     ports:
       - "3000:3000"
     volumes:
       - .:/photolist
-      - ~/.ssh:/root/.ssh
 volumes:
   mysql_data:
