@@ -1,0 +1,4 @@
+<!-- いいね外す -->
+<%= link_to  record_like_path(record ,current_user), method: :delete, remote: true do %>
+  <i class="fas fa-heart"></i>
+<% end %>

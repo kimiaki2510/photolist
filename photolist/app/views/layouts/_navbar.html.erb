@@ -1,0 +1,20 @@
+<!-- ナビゲーション本体 -->
+<header class="mb-4 col-xs-6">
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#00F9A9">
+    <a class="navbar-brand">
+      <%= link_to 'Photolist', records_path %>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end col-xs-6" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <% if logged_in? %>
+          <%= render 'layouts/loginnav' %>
+        <% else %>
+          <%= render 'layouts/newnav' %>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

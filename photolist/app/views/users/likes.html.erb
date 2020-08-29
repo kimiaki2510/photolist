@@ -1,0 +1,11 @@
+<!-- ユーザー詳細のいいね画面 -->
+<div class="row col-xs-6">
+  <aside class="col-sm-4">
+    <%= render 'users/profile' %>
+    <%= render 'relationships/follow_form', user: @user %>
+  </aside>
+  <div class="col-sm-8">
+    <%= render 'users/usernavi' %>
+    <%= render 'likes/likes', users: @users %>
+  </div>
+</div>

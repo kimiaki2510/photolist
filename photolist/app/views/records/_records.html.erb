@@ -1,0 +1,25 @@
+<!-- タイムライン本体 -->
+<div class="row">
+  <aside class="col-12">
+    <ul class="list-unstyled">
+      <li class="media mb-3">
+        <div class="media-body">
+          <table class="table">
+            <div class="container">
+              <% records.each do |record| %>
+                <div class="row card col-12 col-xs-6">
+                  <%= render 'records/timelineuser', record: record %>
+                  <%= render 'records/timelinepost', record: record %>
+                  <div id="like_button">
+                    <%= render partial: 'likes/like_form', locals: {record: record} %>
+                  </div>
+                </div>
+              <% end %>
+              <%= paginate records %>
+            </div>
+          </table>
+        </div>
+      </li>
+    </ul>
+  </aside>
+</div>

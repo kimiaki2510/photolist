@@ -1,0 +1,27 @@
+<!-- ユーザー検索 -->
+<p>ユーザー検索</p>
+<%= form_with(url: search_users_path, method: :get, local: true) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit :search %>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <% if user.image? %>
+            <%= image_tag user.image.thumb.url, :alt => "avatar", :class => "icon_profile" %>
+          <% else %>
+            <%= image_tag("/assets/default.jpg", :alt => "avatar", :class => "icon_profile")%>
+          <% end %>
+        </td>
+        <td><%= link_to user.name, user_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
