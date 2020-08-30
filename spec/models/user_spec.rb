@@ -25,6 +25,5 @@ RSpec.describe User, type: :model do
     )
     expect(!user.save).to eq(false)
   end
-  #パスワードのハッシュ値を返しているか(authenticateメソッド)
-  #すでにフォローしているか
+  
 end
