@@ -25,5 +25,5 @@ RSpec.describe User, type: :model do
     )
     expect(!user.save).to eq(false)
   end
-  
+  #ユーザーの重複エラー
 end
