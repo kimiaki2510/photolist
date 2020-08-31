@@ -12,10 +12,6 @@ RSpec.describe CommentsController, type: :controller do
   ################################
 
   describe "GET #index" do
-    it "200レスポンスが返ってきているか" do
-      get :index
-      expect(response).to have_http_status "200"
-    end
   end
 
   describe "GET #new" do

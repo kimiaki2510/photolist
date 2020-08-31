@@ -12,34 +12,51 @@ RSpec.describe UsersController, type: :controller do
   ################################
 
   describe "GET #new" do
-    
-  end
+    it "200レスポンスが返ってきているか" do
+      get :new
+      expect(response.status).to eq 200
+    end
 
-  describe "GET #create" do
-
+    it "newテンプレートで表示される事" do
+      get :new
+      expect(response).to render_template :new
+    end
   end
 
   describe "GET #index" do
-    it "302レスポンスが返ってきているか" do
-      get :index
-      expect(response).to have_http_status "302"
+    context "login user" do
+      let(:users) { FactoryBot.create_list :user,2 }
+
+    end
+    context "no login user" do
     end
   end
 
   describe "GET #edit" do
-
+    context "login user" do
+    end
+    context "no login user" do
+    end
   end
 
   describe "GET #show" do
-
+    context "login user" do
+    end
+    context "no login user" do
+    end
   end
 
   describe "GET update" do
-
+    context "login user" do
+    end
+    context "no login user" do
+    end
   end
 
   describe "GET destroy" do
-
+    context "login user" do
+    end
+    context "no login user" do
+    end
   end
-
 end
