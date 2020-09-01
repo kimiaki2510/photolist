@@ -40,8 +40,6 @@ class RecordsController < ApplicationController
 
 #投稿削除
   def destroy
-    #byebug
-    #@record = current_user.records.find(params[:id])
     @record = Record.find(params[:id])
     if @record.user_id == current_user.id
       @record.destroy

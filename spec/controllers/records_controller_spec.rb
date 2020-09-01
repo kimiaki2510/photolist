@@ -12,9 +12,9 @@ RSpec.describe RecordsController, type: :controller do
   ################################
 
   describe "GET #index" do
-    it "200レスポンスが返ってきているか" do
+    it "リクエストが成功するか" do
       get :index
-      expect(response).to have_http_status "200"
+      expect(response.status).to eq 200
     end
   end
 
@@ -39,7 +39,7 @@ RSpec.describe RecordsController, type: :controller do
   end
 
   describe "GET #destroy" do
-    
+
   end
 
 end

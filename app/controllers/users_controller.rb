@@ -81,17 +81,7 @@ class UsersController < ApplicationController
     end
   end
 
-  #def favs
-    #@user = User.find(params[:id])
-    #@record = @user.record.order(id: :desc).page(params[:page])
-    #@favposts = @user.favposts.page(params[:page])
-    #counts(@user)
-  #end
-
-
-
   private
-
 #ストロングパラメーター
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
