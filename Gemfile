@@ -58,6 +58,7 @@ group :development, :test do
   gem 'rails-controller-testing', '~> 1.0.5'
   #FactoryBot(モデルのバリデーションテスト)
   gem 'factory_bot_rails', '~> 6.1.0'
+  gem 'capybara', '~> 3.33.0'
 end
 
 group :development do
