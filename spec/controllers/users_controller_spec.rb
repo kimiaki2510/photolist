@@ -29,16 +29,22 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "GET #index" do
-    context "login user" do       
+    context "user login" do
+      let(:user){FactoryBot.create(:user)}
+      before do
+        allow_any_instance_of(ApplicationController).to receive(:current_user) { user }
+      end
+      it "ユーザー作成が有効であるか" do
+        user.valid?
+        expect(user).to be_valid
+      end
       it "リクエストが成功するか" do
         get :index
         expect(response.status).to eq 200
       end
 
-      it "indexテンプレートで表示される事" do
-        get :index
-        expect(response).to render_template :index
-      end
+    end
+    context "no user" do
     end
   end
 
