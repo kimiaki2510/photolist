@@ -13,4 +13,21 @@ RSpec.feature "Records", type: :feature do
       click_button "ログインする"
     end
   end
+  context 'ログイン成功' do
+    before do
+      let(:user){user.password}
+      it '成功時のflashが表示される' do
+        expect(page).to have_css('div', class: 'alert-success')
+      end
+    end
+  end
+
+  context 'ログイン失敗' do
+    before do
+      let(:password) {'badpassword'}
+      it '失敗時のflashが表示される' do
+        expect(page).to have_css('div', class: 'alert-danger')
+      end
+    end
+  end
 end
