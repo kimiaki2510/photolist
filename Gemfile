@@ -35,7 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 #画像アップローダー
-gem 'carrierwave', '~> 2.1.0'
+gem 'carrierwave', '~> 2.1.1'
 #クラウドサービスをrubyから利用しやすくするライブラリ
 #gem 'fog'
 #画像のリサイズ
